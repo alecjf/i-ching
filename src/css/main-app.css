@@ -1,0 +1,235 @@
+#iching #hex-container {
+  --bg-color: #333;
+  --text-color: white;
+  --link-color: lightsalmon;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-weight: 100;
+  text-align: center;
+  padding-bottom: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#iching #hex-container a {
+  color: aqua;
+}
+
+#iching #hex-container a,
+#iching #hex-container h1,
+#iching #hex-container h2,
+#iching #hex-container h3 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+#iching #hex-container a,
+#iching #hex-container h1,
+#iching #hex-container h3 {
+  text-transform: uppercase;
+}
+
+#iching #hex-container h1 {
+  font-size: 2.75rem;
+  text-shadow: 5px 5px 5px black;
+}
+
+#iching #hex-container hr {
+  background-color: white;
+  border: 0;
+  height: 2px;
+  -webkit-box-shadow: 5px 5px 5px black;
+          box-shadow: 5px 5px 5px black;
+  margin: 25px 0;
+}
+
+#iching #hex-container .header-footer {
+  letter-spacing: 20px;
+  text-align: center;
+  padding: 6px 10px 6px 28px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font: bold 1.1rem "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+#iching #hex-container .header-footer.header {
+  background-color: black;
+  color: #aaa;
+  margin: 25px 2px 0;
+}
+
+#iching #hex-container .header-footer.footer {
+  background-color: #666;
+  color: white;
+  margin: 0 2px 25px;
+}
+
+#iching #hex-container #hexagrams {
+  width: 50%;
+  min-width: 350px;
+  text-align: center;
+}
+
+#iching #hex-container #hexagrams a {
+  color: var(--link-color);
+  text-transform: uppercase;
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram {
+  --height: 240px;
+  --box-shadow-dim: 10px;
+  height: calc(var(--height) + (2 * var(--box-shadow-dim)));
+  margin-top: 30px;
+  overflow: hidden;
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container {
+  width: 200px;
+  height: var(--height);
+  background-image: url(https://fern.haus/projects/i-ching/images/stone-bg.jpg);
+  background-position: center bottom;
+  background-size: auto 240px;
+  border-radius: 40%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  position: relative;
+  z-index: 1;
+  -webkit-box-shadow: var(--box-shadow-dim) var(--box-shadow-dim) var(--box-shadow-dim) #111;
+          box-shadow: var(--box-shadow-dim) var(--box-shadow-dim) var(--box-shadow-dim) #111;
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container.shadow {
+  background-image: none;
+  position: relative;
+  top: calc(-1 * var(--height));
+  left: 0;
+  z-index: 2;
+  background: radial-gradient(circle at 0% 0%, transparent, black 350px);
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container.lines {
+  background: none;
+  position: relative;
+  top: calc(-2 * var(--height));
+  z-index: 3;
+  opacity: 0.65;
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div {
+  height: 15px;
+  width: 120px;
+  margin: 12px auto;
+  -webkit-transform: skew(-20deg);
+          transform: skew(-20deg);
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div > div {
+  height: 100%;
+  background-image: url(https://fern.haus/projects/i-ching/images/line-bg.jpg);
+  border-bottom: 5px solid black;
+  border-right: 5px solid #666;
+  border-radius: 8px;
+  opacity: 0.8;
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.changing div {
+  background-image: url(https://fern.haus/projects/i-ching/images/changing-line-bg.jpg);
+  background-size: 160px;
+  opacity: 1;
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.yin {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.yin div {
+  width: 40%;
+}
+
+#iching #hex-container #hexagrams .hexagram .bagua-links {
+  padding-top: 12px;
+}
+
+#iching #hex-container #hexagrams .hexagram .definition-container .definition,
+#iching #hex-container #hexagrams .hexagram .definition-container td {
+  font-size: 0.9rem;
+}
+
+#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table {
+  width: 100%;
+  text-align: left;
+}
+
+#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th {
+  font: bold 1.1rem "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th,
+#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table td {
+  padding: 6px 10px;
+}
+
+#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th {
+  background-color: #666;
+}
+
+#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table td {
+  min-width: 55px;
+  background-color: black;
+}
+
+#iching #hex-container #bagua-info table {
+  width: 350px;
+  padding: 0 40px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: left;
+}
+
+#iching #hex-container #bagua-info table tr th {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+#iching #hex-container #bagua-info table tr td {
+  width: 60%;
+  background-color: black;
+  padding: 3px 6px;
+}
+
+#iching #hex-container #bagua-info table tr td ul {
+  padding-left: 25px;
+}
+
+#iching #hex-container #bagua-info table tr td:first-child {
+  width: 40%;
+  background-color: #888;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+/*# sourceMappingURL=main-app.css.map */

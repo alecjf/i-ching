@@ -1,0 +1,22 @@
+#iching-widget #widget {
+	background: black;
+	color: white;
+	font-family: "Courier New", serif;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	a {
+		color: aqua;
+		text-transform: uppercase;
+	}
+
+	.hex {
+		margin: 10px;
+	}
+
+	a#widget-reading-link {
+		width: 100%;
+	}
+}
