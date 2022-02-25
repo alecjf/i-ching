@@ -8,7 +8,7 @@ ReactDOM.render(
 	<React.StrictMode>
 		<MainApp />
 	</React.StrictMode>,
-	document.getElementById("iching")
+	document.getElementById("i-ching")
 );
 
 // If you want to start measuring performance in your app, pass a function

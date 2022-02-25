@@ -5,6 +5,7 @@ import getReading, {
 	getRandomLineNumbersArray,
 	getLineNumbersStringFromArray,
 } from "../reading";
+import fhLogo from "../images/fern-haus-site-logo.png";
 
 const MainApp = (props) => {
 	function getCastLinesArray() {
@@ -92,46 +93,102 @@ const MainApp = (props) => {
 	}
 
 	return (
-		<div id="hex-container">
-			<div id="hexagrams">
-				<h1>I-Ching</h1>
+		<>
+			<header>
 				<a
+					href="https://fern.haus/"
+					className="fern-haus-link"
+					target="_blank"
+					rel="noreferrer"
+				>
+					<section className="fern-haus-info">
+						<img
+							src={fhLogo}
+							alt="Fern Haus Logo - House with Port Window and Fern Vines"
+						/>
+						<h4>fern.haus</h4>
+					</section>
+				</a>
+				<section id="i-ching-header">
+					<h1>I-Ching</h1>
+					<h2>Consult the Online Oracle</h2>
+				</section>
+				<h3>
+					Learn all about the 8 trigrams and their 64 hexagrams that
+					make up the I-Ching.
+				</h3>
+				<h3>
+					Each reading consists of changing and/or unchanging lines.
+					The changing lines are gold and they transform the top
+					hexagram into the hexagram below. The number of changing
+					lines determines which parts of the hexagrams to read.
+				</h3>
+				<br />
+				<a
+					id="cast-lines-link"
 					href={
 						"./?casting=" +
 						getLineNumbersStringFromArray(
 							getRandomLineNumbersArray()
-						)
+						) +
+						"#hex-container"
 					}
 				>
 					CAST RANDOM LINES
 				</a>
-				{state && (
-					<div>
-						<hr />
-						<div className="hexagram">
-							{state.hexagram1}
-							{formatDefinition(state.definition1)}
-						</div>
-						<div
-							className="hexagram"
-							style={{
-								display:
-									state.changingLines.length > 1
-										? "block"
-										: "none",
-							}}
-						>
-							<div className="header-footer footer">
-								Resulting Hexagram
+				<br />
+				<br />
+			</header>
+			<div id="hex-container">
+				<div id="hexagrams">
+					{state && (
+						<>
+							<hr />
+							<div>
+								<div className="hexagram">
+									{state.hexagram1}
+									{formatDefinition(state.definition1)}
+								</div>
+								<div
+									className="hexagram"
+									style={{
+										display:
+											state.changingLines.length > 1
+												? "block"
+												: "none",
+									}}
+								>
+									<div className="header-footer footer">
+										Resulting Hexagram
+									</div>
+									{state.hexagram2}
+									{formatDefinition(state.definition2, true)}
+								</div>
 							</div>
-							{state.hexagram2}
-							{formatDefinition(state.definition2, true)}
-						</div>
-					</div>
-				)}
+						</>
+					)}
+				</div>
+				{baguaParam && formatBaguaInfo(baguaParam)}
 			</div>
-			<div id="bagua-info">{formatBaguaInfo(baguaParam)}</div>
-		</div>
+			{state && (
+				<footer>
+					<a
+						href="https://fern.haus/"
+						className="fern-haus-link"
+						target="_blank"
+						rel="noreferrer"
+					>
+						<section className="fern-haus-info">
+							<img
+								src={fhLogo}
+								alt="Fern Haus Logo - House with Port Window and Fern Vines"
+							/>
+							<h4>fern.haus</h4>
+						</section>
+					</a>
+				</footer>
+			)}
+		</>
 	);
 };
 
@@ -141,7 +198,8 @@ function formatBaguaInfo(aBagua) {
 	}
 	const baguaInfo = bagua[aBagua];
 	return (
-		<div>
+		<div id="bagua-info">
+			<hr />
 			<table>
 				<thead>
 					<tr>

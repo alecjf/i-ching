@@ -1,45 +1,106 @@
-#iching #hex-container {
-  --bg-color: #333;
-  --text-color: white;
-  --link-color: lightsalmon;
-  background-color: var(--bg-color);
-  color: var(--text-color);
-  font-weight: 100;
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@700&display=swap");
+.fern-haus-link {
+  text-decoration: none;
+}
+
+.fern-haus-link:hover .fern-haus-info {
+  background-color: #333;
+}
+
+.fern-haus-link:hover .fern-haus-info img {
+  -webkit-filter: grayscale(100%);
+          filter: grayscale(100%);
+  -webkit-filter: invert(100%);
+          filter: invert(100%);
+}
+
+.fern-haus-link:hover .fern-haus-info h4 {
+  color: #ccc;
+}
+
+.fern-haus-link .fern-haus-info {
+  background-color: salmon;
+  color: white;
   text-align: center;
-  padding-bottom: 50px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  padding: 20px;
 }
 
-#iching #hex-container a {
-  color: aqua;
+.fern-haus-link .fern-haus-info img {
+  height: 80px;
+  width: auto;
 }
 
-#iching #hex-container a,
-#iching #hex-container h1,
-#iching #hex-container h2,
-#iching #hex-container h3 {
-  font-family: "Barlow Semi Condensed", sans-serif;
+.fern-haus-link .fern-haus-info h4 {
+  margin: 0 auto;
 }
 
-#iching #hex-container a,
-#iching #hex-container h1,
-#iching #hex-container h3 {
+header {
+  text-align: center;
+}
+
+header > *:not(.fern-haus-link):not(#i-ching-header):not(#cast-lines-link) {
+  max-width: 700px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 20px;
+}
+
+header #cast-lines-link {
+  background-color: salmon;
+  border-radius: 5px;
+  color: white;
+  display: inline-block;
+  font-weight: 600;
+  padding: 5px 10px;
+  text-decoration: none;
+}
+
+header #cast-lines-link:hover {
+  background-color: white;
+  color: salmon;
+}
+
+header h3 {
+  font-weight: 300;
+}
+
+header hr {
+  width: calc(100% - 40px);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+header #i-ching-header {
+  background-color: white;
+  margin-bottom: 40px;
+  padding: 20px;
+  text-align: center;
+}
+
+header #i-ching-header h1,
+header #i-ching-header h2 {
+  margin: 0;
+}
+
+header #i-ching-header h1 {
+  color: salmon;
+  font-size: 4rem;
+  letter-spacing: 0.3rem;
   text-transform: uppercase;
+  position: relative;
+  left: 5px;
 }
 
-#iching #hex-container h1 {
-  font-size: 2.75rem;
-  text-shadow: 5px 5px 5px black;
+header #i-ching-header h2 {
+  color: #666;
 }
 
-#iching #hex-container hr {
+hr {
   background-color: white;
   border: 0;
   height: 2px;
@@ -48,7 +109,45 @@
   margin: 25px 0;
 }
 
-#iching #hex-container .header-footer {
+#i-ching #hex-container {
+  max-width: 700px;
+  background-color: #333;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-weight: 100;
+  margin: auto;
+  padding: 0 20px 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 30px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#i-ching #hex-container a,
+#i-ching #hex-container h1,
+#i-ching #hex-container h2,
+#i-ching #hex-container h3 {
+  font-family: "Barlow Semi Condensed", sans-serif;
+  text-transform: uppercase;
+}
+
+#i-ching #hex-container a,
+#i-ching #hex-container h1,
+#i-ching #hex-container h3 {
+  text-transform: uppercase;
+}
+
+#i-ching #hex-container h1 {
+  font-size: 2.75rem;
+  text-shadow: 5px 5px 5px black;
+}
+
+#i-ching #hex-container .header-footer {
   letter-spacing: 20px;
   text-align: center;
   padding: 6px 10px 6px 28px;
@@ -58,41 +157,48 @@
   text-transform: uppercase;
 }
 
-#iching #hex-container .header-footer.header {
+#i-ching #hex-container .header-footer.header {
   background-color: black;
   color: #aaa;
   margin: 25px 2px 0;
 }
 
-#iching #hex-container .header-footer.footer {
+#i-ching #hex-container .header-footer.footer {
   background-color: #666;
   color: white;
   margin: 0 2px 25px;
 }
 
-#iching #hex-container #hexagrams {
-  width: 50%;
-  min-width: 350px;
+#i-ching #hex-container #bagua-info,
+#i-ching #hex-container #hexagrams {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+#i-ching #hex-container #hexagrams {
   text-align: center;
 }
 
-#iching #hex-container #hexagrams a {
-  color: var(--link-color);
+#i-ching #hex-container #hexagrams a {
+  color: salmon;
   text-transform: uppercase;
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram {
-  --height: 240px;
-  --box-shadow-dim: 10px;
-  height: calc(var(--height) + (2 * var(--box-shadow-dim)));
+#i-ching #hex-container #hexagrams a:hover {
+  color: white;
+}
+
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram {
+  height: 260px;
   margin-top: 30px;
   overflow: hidden;
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container {
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container {
   width: 200px;
-  height: var(--height);
-  background-image: url(https://fern.haus/projects/i-ching/images/stone-bg.jpg);
+  height: 240px;
+  background-image: url(../images/stone-bg.jpg);
   background-position: center bottom;
   background-size: auto 240px;
   border-radius: 40%;
@@ -112,28 +218,28 @@
           justify-content: center;
   position: relative;
   z-index: 1;
-  -webkit-box-shadow: var(--box-shadow-dim) var(--box-shadow-dim) var(--box-shadow-dim) #111;
-          box-shadow: var(--box-shadow-dim) var(--box-shadow-dim) var(--box-shadow-dim) #111;
+  -webkit-box-shadow: 10px 10px 10px #111;
+          box-shadow: 10px 10px 10px #111;
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container.shadow {
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container.shadow {
   background-image: none;
   position: relative;
-  top: calc(-1 * var(--height));
+  top: -240px;
   left: 0;
   z-index: 2;
   background: radial-gradient(circle at 0% 0%, transparent, black 350px);
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container.lines {
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container.lines {
   background: none;
   position: relative;
-  top: calc(-2 * var(--height));
+  top: -480px;
   z-index: 3;
   opacity: 0.65;
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div {
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div {
   height: 15px;
   width: 120px;
   margin: 12px auto;
@@ -141,22 +247,22 @@
           transform: skew(-20deg);
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div > div {
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div > div {
   height: 100%;
-  background-image: url(https://fern.haus/projects/i-ching/images/line-bg.jpg);
+  background-image: url(../images/line-bg.jpg);
   border-bottom: 5px solid black;
   border-right: 5px solid #666;
   border-radius: 8px;
   opacity: 0.8;
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.changing div {
-  background-image: url(https://fern.haus/projects/i-ching/images/changing-line-bg.jpg);
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.changing div {
+  background-image: url(../images/changing-line-bg.jpg);
   background-size: 160px;
   opacity: 1;
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.yin {
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.yin {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -165,67 +271,65 @@
           justify-content: space-between;
 }
 
-#iching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.yin div {
+#i-ching #hex-container #hexagrams .hexagram .layered-hexagram .baguas-container .bagua > div.yin div {
   width: 40%;
 }
 
-#iching #hex-container #hexagrams .hexagram .bagua-links {
+#i-ching #hex-container #hexagrams .hexagram .bagua-links {
   padding-top: 12px;
 }
 
-#iching #hex-container #hexagrams .hexagram .definition-container .definition,
-#iching #hex-container #hexagrams .hexagram .definition-container td {
-  font-size: 0.9rem;
-}
-
-#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table {
+#i-ching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table {
   width: 100%;
   text-align: left;
 }
 
-#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th {
+#i-ching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th {
   font: bold 1.1rem "Barlow Semi Condensed", sans-serif;
   text-transform: uppercase;
 }
 
-#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th,
-#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table td {
+#i-ching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th,
+#i-ching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table td {
   padding: 6px 10px;
 }
 
-#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th {
+#i-ching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table th {
   background-color: #666;
 }
 
-#iching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table td {
+#i-ching #hex-container #hexagrams .hexagram .definition-container #changing-lines-table td {
   min-width: 55px;
   background-color: black;
 }
 
-#iching #hex-container #bagua-info table {
-  width: 350px;
-  padding: 0 40px;
+#i-ching #hex-container #bagua-info table {
+  width: 100%;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   text-align: left;
 }
 
-#iching #hex-container #bagua-info table tr th {
+#i-ching #hex-container #bagua-info table tr th {
   text-align: center;
   text-transform: uppercase;
 }
 
-#iching #hex-container #bagua-info table tr td {
+#i-ching #hex-container #bagua-info table tr td {
   width: 60%;
   background-color: black;
   padding: 3px 6px;
 }
 
-#iching #hex-container #bagua-info table tr td ul {
+#i-ching #hex-container #bagua-info table tr td:first-child {
+  text-align: right;
+}
+
+#i-ching #hex-container #bagua-info table tr td ul {
   padding-left: 25px;
 }
 
-#iching #hex-container #bagua-info table tr td:first-child {
+#i-ching #hex-container #bagua-info table tr td:first-child {
   width: 40%;
   background-color: #888;
   font-family: "Barlow Semi Condensed", sans-serif;

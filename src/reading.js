@@ -14,9 +14,7 @@ function getRandomLineNumbersArray() {
 }
 
 function getLineNumbersStringFromArray(array) {
-	let result = "";
-	array?.map((num) => (result += num));
-	return result;
+	return array?.join("");
 }
 
 function getBagua(lines) {
