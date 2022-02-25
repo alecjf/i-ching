@@ -1,19 +1,13 @@
-import ReactDOM from "react-dom";
 import Bagua from "./Bagua";
-import { formatBaguaInfo } from "./MainApp";
 
 const Hexagram = (props) => {
 	function makeHeader() {
 		function getLink(aBagua) {
 			return (
 				<a
-					onClick={() =>
-						ReactDOM.render(
-							formatBaguaInfo(aBagua),
-							document.getElementById("bagua-info")
-						)
-					}
-					href={"#bagua-info"}
+					href={`?casting=${props.castLinesArray.join(
+						""
+					)}&bagua=${aBagua}#bagua-info`}
 					target="_self"
 					rel="noreferrer"
 				>
